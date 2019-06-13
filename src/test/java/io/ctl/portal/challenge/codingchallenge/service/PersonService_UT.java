@@ -3,6 +3,7 @@ package io.ctl.portal.challenge.codingchallenge.service;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class PersonService_UT {
     private PersonService service = new PersonService();

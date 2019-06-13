@@ -1,8 +1,6 @@
 package io.ctl.portal.challenge.codingchallenge.service;
 
 import io.ctl.portal.challenge.codingchallenge.model.Person;
-import io.ctl.portal.challenge.model.Person;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
