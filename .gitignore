@@ -1,16 +1,7 @@
 HELP.md
-.gradle
+# .gradle
 /build/
-!gradle/wrapper/gradle-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# !gradle/wrapper/gradle-wrapper.jar
 
 ### IntelliJ IDEA ###
 .idea
