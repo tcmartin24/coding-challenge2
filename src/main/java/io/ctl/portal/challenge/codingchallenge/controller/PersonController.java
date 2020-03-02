@@ -14,11 +14,13 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+    @GetMapping("/people")
     public List<Person> getPeople() {
         return personService.getPeople();
     }
 
-    public Person savePerson(Person person) {
+    @PostMapping("/people")
+    public Person savePerson(@RequestBody Person person) {
         return personService.savePerson(person);
     }
 }

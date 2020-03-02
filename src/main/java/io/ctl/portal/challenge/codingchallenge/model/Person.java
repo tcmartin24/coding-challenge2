@@ -18,7 +18,6 @@ public class Person {
     private String randomWord;
 
     public static List<Person> createPeople(String personCSVList) {
-        String[] testArray = personCSVList.split("\\|");
         return Arrays.asList(personCSVList.split("\\|"))
                 .stream()
                 .map(personString -> {

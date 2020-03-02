@@ -3,10 +3,12 @@ package io.ctl.portal.challenge.codingchallenge.service;
 import io.ctl.portal.challenge.codingchallenge.client.RandomStringClient;
 import io.ctl.portal.challenge.codingchallenge.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PersonService {
 
     @Autowired
@@ -19,7 +21,7 @@ public class PersonService {
     }
 
     public Person savePerson(Person person) {
-        int nextId = 50;
+        int nextId = (people.size() + 1) * 100;
         person.setId(nextId);
         person.setRandomWord(randomStringClient.retrieveRandomString(5));
         people.add(person);
