@@ -9,7 +9,7 @@
               <label class="a-label -mr--2" for="fname" style="white-space: nowrap">First Name:</label>
             </div>
             <div class="a-col -w--6">
-              <input class="a-input" type="text" id="fname" placeholder="First Name" v-model="firstName">
+              <input class="a-input" type="text" id="fname" placeholder="First Name">
             </div>
           </div>
           <div class="a-grid -mb--2">
@@ -17,7 +17,7 @@
               <label class="a-label -mr--2" for="lname" style="white-space: nowrap">Last Name:</label>
             </div>
             <div class="a-col -w--6">
-              <input class="a-input" type="text" id="lname" placeholder="Last Name" v-model="lastName">
+              <input class="a-input" type="text" id="lname" placeholder="Last Name">
             </div>
           </div>
           <div class="a-grid -mb--2">
@@ -25,14 +25,14 @@
               <label class="a-label -mr--3" for="age" style="white-space: nowrap">Age:</label>
             </div>
             <div class="a-col -w--6">
-              <input class="a-input" type="number" id="age" placeholder="age" v-model="age">
+              <input class="a-input" type="number" id="age" placeholder="age">
             </div>
           </div>
         </div>
       </div>
       <div class="a-card__footer">
-        <button class="a-btn -primary" @click="submit">Submit</button>
-        <button class="a-btn -ml--2" @click="clear">Clear</button>
+        <button class="a-btn -primary">Submit</button>
+        <button class="a-btn -ml--2">Clear</button>
       </div>
     </div>
     <table class="a-table -mt--10">
@@ -62,11 +62,6 @@
           <td class="-text--center">James, Bond</td>
           <td class="-text--right">55</td>
         </tr>
-        <tr class="-md" v-for="(person, i) in persons" :key="i">
-          <td class="-text--left">{{ person.id }}</td>
-          <td class="-text--center">{{ person.firstName }}, {{ person.lastName }}</td>
-          <td class="-text--right">{{ person.age }}</td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -92,10 +87,7 @@ export default {
   methods: {
     getPersons() {
       this.loading = true;
-      axios.get('http://localhost:9001/people').then((res) => {
-        this.persons = res.data;
-        this.loading = false;
-      });
+      axios.get('http://localhost:9001/people');
     },
     submit() {
       const person = {
@@ -103,9 +95,7 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
       };
-      axios.post('http://localhost:9001/people', person).then(() => {
-        this.getPersons();
-      });
+      axios.post('http://localhost:9001/people', person).;
     },
     clear() {
       this.firstName = '';
