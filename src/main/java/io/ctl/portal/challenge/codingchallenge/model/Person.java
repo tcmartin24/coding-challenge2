@@ -18,16 +18,7 @@ public class Person {
     private String randomWord;
 
     public static List<Person> createPeople(String personCSVList) {
-        return Arrays.asList(personCSVList.split("\\|"))
-                .stream()
-                .map(personString -> {
-                    String[] personArray = personString.split(",");
-                    Person tmpPerson = new Person();
-                    tmpPerson.firstName = personArray[1].trim();
-                    tmpPerson.lastName = personArray[0].trim();
-                    tmpPerson.age = Integer.valueOf(personArray[2].trim());
-                    return tmpPerson;
-                }).collect(Collectors.toList());
+        return null;
     }
 
     public int getId() {
