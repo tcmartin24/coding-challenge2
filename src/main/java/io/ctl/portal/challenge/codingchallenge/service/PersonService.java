@@ -21,8 +21,7 @@ public class PersonService {
     }
 
     public Person savePerson(Person person) {
-        int nextId = (people.size() + 1) * 100;
-        person.setId(nextId);
+        person.setId(99);
         person.setRandomWord(randomStringClient.retrieveRandomString(5));
         people.add(person);
         return person;
